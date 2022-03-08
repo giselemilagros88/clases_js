@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js</title>
+</head>
+<body>
+
+    <script>
+         
+        //------------ CLASE 13 - 1 JS -----------------------------------------------------------------
+        //console.log("HOLA MUNDO, ESTO ES JS");
+        //console.log("lo que quiera");
+
+        // TIPOS DE DATOS
+        //UNDEFINED CUANDO NO EXISTE UN VALOR ASIGNADO
+        // NULL CUANDO LA VARIABLE NO TIENE CONTENIDO
+        //BOOLEAN VERDADERO Y FALSO 
+        //STRING REPRESENTA CADENA DE CARACTERES
+        //SYMBOL NO LO VAMOS A USAR 
+        //NUMBER NUMEROS
+        //OBJECT OBJETO, UNA ESTRUCTURA QUE NOS PERMITE CREAR NUESTRO PROPIO TIPO DE DATO
+
+        // QUE ES UNA VARIABLE
+        // ES UN ESPACIO EN MEMORIA QUE RESERVA EL COMPUTADOR, 
+        // PODEMOS IMAGINARLO COMO UNA CAJITA 
+        // SE USA LA PALABRA RESERVADA VAR 
+        var miVariable = "CursoPhp";
+
+        var  variable = "";
+        
+
+        //-- palabra reservada + nombre de variable + asignador de contenido + contenido + ; opcional
+        console.log(miVariable);
+       
+
+        //-- puedo asignar otro tipo de dato o valor a mi variable 
+
+        miVariable = 16;
+        console.log(miVariable);
+
+        miVariable= true;
+        console.log(miVariable);
+        miVariable= false;
+
+        
+
+        // --dependiendo el contenido de la variable su nombre deberia identificar ese contenido ej:
+         var miNombre = "Gisele";
+         console.log(miNombre);
+
+        //-- esta manera de darle nombre a las variables se denomina camelCase
+        //  var camelCase = "unaVariable";
+        //--esta linea es valida 
+        // var variable;
+        // var variable2 = 2;
+        // --vamos a ver que al crearla y mostrarla sin darle un valor dice undefined
+        //  console.log(variable);
+        // console.log(variable2);
+
+        // --para darle un valor a la variable que creamos arriba es asi 
+        //  variable = "unValor"; // ya tiene un valor 
+        //  console.log(variable);
+
+        //-- asignar un valor de una variable a otra variable 
+
+         var a = 5; 
+         var b= "hola";
+         var b = a;
+
+         console.log(a);
+        console.log(b);
+
+        //-- otra forma de asignar es la siguiente 
+
+         var c = 10;
+         var d;
+         d = c; 
+        // console.log(c);
+        // console.log(d);
+
+        //--tambien podemos declarar las variables con la palabra reservada let 
+        //--Esta nueva manera de declarar las variables afecta a su ámbito, ya que son locales al bloque donde se están declarando.
+         let unaVariable = 3; 
+         let otraVariable = 4;
+         console.log(unaVariable);
+
+        // la diferencia entre una variable declarada y una inicializada  
+        // var x;
+        // var x = 1; // aca la creamos y la inicializamos (le damos un valor)
+        // declaracion de una constante , es decir no cambia su valor 
+          
+        const soyConstante = 3;
+        // aca llegamos ------miercoles
+
+
+
+        // -- en js las variables con mayusculas y minisculas no son iguales 
+        // --case sensitive
+        //  var miApellido ="gonzalez";
+        //  console.log(miapellido); // index.html:77 Uncaught ReferenceError: miapellido is not defined
+        //  console.log(miApellido);
+
+        //----------------------------VAR VS LET------------------------
+        //-- UNA DE LAS DIFERENCIAS PRINCIPALES ES QUE CUANDO DECLARAMOS UNA
+        //--VARIABLE CON VAR PODEMOS DECLARAR LA MISMA VARIABLE MAS DE UNA VEZ
+        // var variable ="pedro";
+        // var variable ="Jose" ;
+        // con LET no podemos declarar la variable dos veces
+        // let sumatoria= 2 + 3 ;
+        //sumatoria = 8 ;
+        //--------------------------AMIBITO DE VAR Y LET-------------------- 
+        //--CUANDO USAMOS VAR ESTAMOS CREANDO UNA VARIABLE GLOBAL que se podra acceder por todos lados
+        //-- O UNA VARIABLE LOCAL SI ESTA UNA FUNCION Y LA MISMA NO SE VA A PODER USAR FUERA DE LA FUNCION
+        //-- cuando usamos let estamos limitando su uso al bloque donde se define
+        // ejemplo en un ciclo o en un condicional si usamos una variable y la declaramos let, no podremos acceder fuera del mismo
+
+
+        // 
+        
+
+        //--------------------CONVERSIONES DE TIPO DE DATOS
+        //-- SI TENGO UNA VARIABLE QUE TIENE EL SIGUIENTE DATO
+         var numeroString= "5";
+         var numeroString2 = "10";
+
+
+
+         //numeroString = parseInt(numeroString);
+
+         //var numeroInt = parseInt(numeroString);
+
+         var suma = parseInt(numeroString) + parseInt(numeroString2);
+         console.log(suma);
+
+         numeroString = parseInt(numeroString);
+
+         
+         numeroString2  = parseInt(numeroString2);
+
+         console.log(numeroString + numeroString2);
+
+         var miLetra = "5.66b7";
+         var numero = 2;
+
+         console.log(parseInt(miLetra));
+
+         //var suma = numeroString + numeroString2 ;
+
+        // console.log(suma);
+
+         // esto no es un numero, sino una cadena que tiene un 5
+        //console.log( parseInt(numeroString));
+        var miFloat = 2.6;
+        console.log(parseInt(miFloat)); // me trunca el float a entero
+        //-- ahora si quiero convertir una cadena que no tiene caracteres que representen numeros
+        //--al intentar convertir me devolvera NaN , NOT A NUMBER 
+        //var miString = "Hola";
+        //console.log(parseInt(miString));
+        //-- tambien va a tratar de un string sacar la parte que es numerica
+        //--parseInt("44aa33bb"); // 44
+        //-- parseFloat() convierte una cadena de caracteres a un float si es que tiene caracteres que representar numeros
+        var numeroFloat= "3.56";
+        console.log( parseFloat(numeroFloat) ); // ahora que es un numero puedo hacer operaciones matematicas con el
+
+        //-- Number() A diferencia de los dos métodos anteriores, éste y el siguiente (conversión implícita) son  //específicamente para //conversión de tipos. En cambio, parseInt() y parseFloat() son para extraer un número de un string.
+        //--Number() es un constructor para crear objetos de tipo Number, pero cuando se utiliza sin el new funciona como //--un conversor a tipo númerico.
+
+        //--como constructor: 
+        // var myNumber = new Number(14);
+        // console.log(myNumber);
+
+        //--como método: 
+        var myNumber =  Number(true);
+         
+        console.log(myNumber);
+
+        /*Puede utilizarse para números enteros o decimales y acepta también la notación exponencial.
+
+            Number("12"); // 12
+            Number("3.14"); // 3.14
+            Number("314e-2"); // 3.14
+            Number("0.0314E+2"); // 3.14
+            Number("e-2"); // NaN
+            Number('0x10'); // 16 admite el prefijo 0x para indicar 'hexadecimal'
+            Number(" 12 "); // 12
+            Number("20 dias"); // NaN
+            Number("Hace 20 dias"); // NaN
+            Number("44aa33bb"); // NaN
+            Number(""); // 0 -> ¡¡el string vacio se convierte a 0!!
+            Number(" "); // 0
+            Number(null); // 0
+            Con Number() podemos convertir booleans en números, false siempre se convierte en 0 y true en 1.
+            Number(true); // 1
+            Number(false); // 0
+            //--también podemos incluir una expresión con resultado boolean
+            Number( (1<2) ); // 1
+            Number( (1===2) ); // 0 */
+
+            var myNumberValue = +"8"; // number 8
+            console.log(myNumberValue); 
+
+            
+            // CONVERSION IMPLICITA 
+            /* Conversión implicita '+'
+
+             
+
+            La conversión implícita es una forma de conversión rápida a número. Podemos utilizar cualquier operación que fuerce al intérprete a realizar una conversión implícita de tipos pero que no varíe el operando:
+
+            var myNumberValue = "8" - 0; // number 8
+            var myNumberValue = "8" * 1; // number 8
+            var myNumberValue = "8" / 1; // number 8
+            var myNumberValue = +"8"; // number 8
+            La forma más utilizada por su simplicidad es +var. El operador unitario + no cambia el valor de var pero lo convierte a número. No confundir con ++var que sí cambia el valor, sumándole uno.   */
+            
+            /* Como veremos en los siguientes ejemplos, esta forma de conversión es equivalente a Number() y devuelve los mismos resultados:
+            +"12"; // 12
+            +"3.14"; // 3.14
+            +"314e-2"; // 3.14
+            +"0.0314E+2"; // 3.14
+            +"e-2"; // NaN
+            +"0x10"; // 16 admite el prefijo 0x para indicar 'hexadecimal'
+            +" 12 "; // 12
+            +"20 dias"; // NaN
+            +"Hace 20 dias"; // NaN
+            +"44aa33bb"; // NaN
+            +""; // 0 -> ¡¡el string vacio se convierte a 0!!
+            +" "; // 0
+            +null; // 0
+
+            //boolean
+            +true; // 1
+            +false; // 0
+            //también podemos incluir una expresión con resultado boolean
+            +(1<2); // 1
+            +(1===2); // 0*/
+
+            
+
+            //--------------------RESUMEN DE CONVERSIONES----------------------------------
+            /*
+            parseInt() tiene un parámetro extra para indicar la base del número (radix).
+            parseFloat() no admite radix. Todos los números se consideran en base decimal.
+            parseInt(), Number() y '+' interpretan el prefijo '0x' como número hexadecimal, parseFloat() no.
+            parseInt() y parseFloat() pueden extraer un número al principio de un string.
+            Si el string contiene caracteres no numéricos, Number() y '+' no lo convierten, devuelven NaN.
+            Cuando el argumento es un objeto, parseInt() y parseFloat() llamarán al método .toString() antes de analizar la cadena. Number() y +var llamarán primero a .valueOf() y despues a .toString() si es necesario.
+
+            parseInt() no entiende la notación exponencial, todos los demás si.
+            parseInt() y parseFloat() convierten el string vacio en NaN.
+            Number() y '+' convierten el string vacio en 0.
+            parseInt() y parseFloat() de un boolean es NaN.
+            Number() y '+' de un boolean devuelven 0 para false y 1 para true.*/
+
+
+
+
+       
+        //-----------------CLASE 14 OPERADORES-BUCLES-CONDICIONALES- ------------ 2 JS--------------------------
+        // --------------------------OPERACIONES-----------------
+
+        // --suma y resta de dos numeros 
+        // var suma = 7 + 12 ;
+        // console.log(suma);
+        // var resta = 15 - 5 ; 
+        // console.log(resta);
+        // resta = 5 - 15 ; // puedo actualizar el valor de una variable 
+        // console.log(resta);
+
+        //--multiplicacion de dos numeros
+        // var producto = 5 * 3 ; 
+        // console.log(producto);
+        // producto = 9 * 0 ;
+        // console.log(producto);
+
+        //--division de dos numeros 
+        // var cociente = 10 / 5 ;
+        // console.log(cociente);
+        // cociente = 17 / 31 ;
+
+        //--la computadora puede guardar un numero finito de resultados, 
+        // --el resultado sera una aproximacion 
+        // console.log(cociente); 
+
+        //-- vamos a dividir por 0 
+         cociente = 10 / 0 ;
+        console.log(cociente); // devolvera infinity 
+
+        //-- tambien podemos crear numeros decimales(float)
+        // var miNumeroDecimal = 23.4 ; 
+        // console.log(miNumeroDecimal);
+        //-- las operaciones con los numeros decimales son iguales que con los numeros enteros
+
+        //-- como saber si un numero es par o inpar
+        //-- nos da el resto entre 10/2, donde el cociente es 5, pero el resto sera 0
+        //-- de esta forma si dividimos los numeros por dos y el resto es 0 sabemos que el numero es par 
+        /*
+        
+         var resto = 5 % 2 ;
+         console.log(resto);
+        
+         // CLASE 15 ......
+         
+        //-- como incrementar el valor de una variable 
+         var frutasCompradas = 10;
+
+         var naranjas = 0;
+         naranjas++;
+
+        //-- opcion 1 , el lado derecho se evalua primero y luego se realiza la asignacion
+        //-- es decir que primero se suma 1 a 10 y luego se pisa el valor en la misma variable
+         frutasCompradas = frutasCompradas + 1 ; 
+         console.log(frutasCompradas);
+        //-- opcion 2, suma uno a la variable actual de forma mas resumida 
+        frutasCompradas++;
+        console.log(frutasCompradas);
+
+        //-- reducir el valor de una variable 
+        frutasCompradas--;
+        console.log(frutasCompradas);
+
+        //-- como incrementar en otro valor que no sea 1 
+         var y = 20 ;
+         y = y + 5 ;
+         console.log(y);
+        // opcion 2, esto suma en la asignacion 5 
+         y += 5; 
+        console.log(y);
+        //-- lo mismo si quiero reducir en un numero que no sea 1 
+        var  restar = 3 ; 
+
+        var z = 20 ;
+        z = z - restar ;
+        console.log(z);
+
+         z -= restar;
+        console.log(z);
+
+        //-- asignacion compuesta pero de multiplicaciones 
+
+        var e = 23 ;
+        e = e * 2 ;
+        console.log(e);
+
+         e *= 2 ;
+
+         */
+        // console.log(e);
+        // asingnacion compuesta de division 
+
+        //e /= 2;
+        //console.log(e);
+
+        //------------ OPERADORES CONDICIONALES----------------------------
+
+        /*Sirven para realizar expresiones condicionales todo lo complejas que deseemos. Estas expresiones se utilizan para tomar decisiones en función de la comparación de varios elementos, por ejemplo si un numero es mayor que otro o si son iguales.
+        Los operadores condicionales se utilizan en las expresiones condicionales para tomas de decisiones.
+        Seguidamente podemos ver la tabla de operadores condicionales.
+        == Comprueba si dos valores son iguales
+        5 == 6 / false 
+        != Comprueba si dos valores son distintos
+        5 != 6 / true 
+        > Mayor que, devuelve true si el primer operando es mayor que el segundo
+        6 > 5 / true 
+        < Menor que, es true cuando el elemento de la izquierda es menor que el de la derecha
+
+        5 < 6 / verdadero true
+
+        >= Mayor igual
+
+        6 <= 6 / true 
+
+        6 <= 7 / true 
+
+
+        <= Menor igual
+
+        var numeroSeis = 6;
+        var numero = "6";
+
+        numeroSeis == numero / true 
+
+        numeroSeis === numero / false 
+
+        pepe Pepe 
+
+        ===
+        !==
+        Los operadores de estricta igualdad (=== y !==) usan el Algoritmo Estricto Comparativo de Igualdad  para comparar dos operandos:
+
+        -Si los operandos son de diferente tipo de valor, produce false.
+        -Si ambos operandos son objetos, produce true solo si se refiere al mismo objeto.
+        -Si ambos operandos son de tipo null o ambos operandos son undefined, produce true.
+        -Si cualquier operando es de tipo NaN, produce false.
+        -En otros casos, compara los valores de ambos operandos:
+        --Los números deben tener el mismo valor numérico, aunque +0 y -0 son considerados como del mismo valor.
+        --Los strings deben tener los mismos caracteres en el mismo orden.
+        --Los booleanos deben ambos ser true o ambos ser false.
+        --La diferencia más notable entre este operador y el operador de igualdad regular (==) es que si los operandos    son de distinto tipo de valor, el operador == intenta convertir los valores a un mismo tipo de dato antes de   compararlos.*/
+        
+
+        //---------OPERADORES LOGICOS-----------------------------
+        /*Estos operadores sirven para realizar operaciones lógicas, que son aquellas que dan como resultado un verdadero o un falso, y se utilizan para tomar decisiones en nuestros scripts. En vez de trabajar con números, para realizar este tipo de operaciones se utilizan operandos boleanos, que conocimos anteriormente, que son el verdadero (true) y el falso (false). Los operadores lógicos relacionan los operandos boleanos para dar como resultado otro operando boleano.
+        Los operadores lógicos de JavaScript son: 
+
+        NOT (!),
+
+        !(5 < 6)
+
+        AND (&&) 
+
+        (5 < 6) && ( 6 > 5)  / verdadero si los dos son verdaderos
+
+
+        OR (||). 
+
+        (5 < 6) || ( 5===6)  / true 
+        El operador NOT produce falso si su operando es verdadero, y viceversa. 
+        El operador AND produce verdadero sólo si ambos operandos son verdaderos; si cualquiera de los operando es falso, produce falso.
+        El operador OR produce verdadero si cualquiera de los operandos es verdadero, y falso en caso de que los dos operandos sean falsos. */
+
+         console.log(4>2);
+         console.log(2>4);
+         console.log(4>2 && 5>1)
+         console.log(4>2 && 1>3)
+         console.log(4>2 || 3>1)
+         console.log(4>2 || 3<1)
+         console.log(! (4>2) )
+
+        console.log(!(1>3))
+        
+        var x = 3;
+        var y = 3 ; 
+
+        var respuesta ="";
+        // CONDICIONALES 
+        if ( ( (x==2) && (y!=3) ) )
+        
+        {
+            
+            respuesta ="se cumple" ;
+            console.log(respuesta);
+            //SI la variable x vale 2 y la variable y es distinta de tres
+
+        }
+
+      
+        
+        // ----------TYPEOF--------------------------
+        /*Para comprobar el tipo de un dato se puede utilizar el operador typeof, que devuelve una cadena de texto que describe el tipo del operador que estamos comprobando.*/
+        var boleano = true ;
+        var numerico = 6;
+        var numerico_flotante = 6.0;
+        var texto = "mi texto";
+        var fecha = new Date(); 
+        /*
+        document.write("<br>El tipo de boleano es: " + typeof(boleano))
+        document.write("<br>El tipo de numerico es: " + typeof(numerico))
+        document.write("<br>El tipo de numerico_flotante es: " + typeof(numerico_flotante))
+        document.write("<br>El tipo de texto es: " + typeof(texto))
+        document.write("<br>El tipo de fecha es: " + typeof(fecha))
+
+        document.write("<br>El valor de fecha es: " + fecha)
+       */
+        //-- COMPROBACION DE DATO INDEFINIDO
+        /*--Si el tipo de una variable es undefined, puede utilizarse para obtener la respuesta sobre si la variable ha sido inicializada o no. */
+          /*
+        var vari;
+        console.log(vari);
+
+        var variable; 
+
+        if ( (typeof(vari) == 'undefined' ) )
+         {
+            document.write("<br>La variable vale undefined, no tiene valor definido ");
+            console.log('La variable vale undefined, no tiene valor definido');
+
+        }
+
+        */
+        
+       // alert ( "Hola Mundo JavaScript" )
+        var texto = 'Hola mundo JavaScript DESDE UNA VARIABLE';
+       // alert (texto);
+
+        var numero = 10;
+        // alert (numero);
+
+        var concateno = 50;
+       // alert('Se esta concatenando una variable ' + concateno);
+
+        /*Prompt
+
+         Al igual que la función alert, la función prompt es también un método del objeto Window. Esta función se utiliza cuando el usuario ingresa datos por medio del teclado. Con esta función aparece una ventana en la pantalla, con un espacio para el valor que se debe ingresar y un botón aceptar para que la información sea guardada. */
+         /*
+         alert("esto es una alerta");
+         var nombre = prompt ('Ingrese su nombre');
+         document.write("<br>" + nombre );
+
+         var rosa = "rosa";
+         var verde ="verde"; 
+
+        */
+       //CONDICIONALES ---------------------IF 
+       /*IF es una estructura de control utilizada para tomar decisiones. Es un condicional que sirve para realizar unas u otras operaciones en función de una expresión y primero se evalúa una expresión, si da resultado positivo se realizan las acciones relacionadas con el caso positivo.
+       La sintaxis de la estructura IF es la siguiente.
+       if (expresión) 
+       {
+            //acciones a realizar en caso positivo
+       }
+        Opcionalmente se pueden indicar acciones a realizar en caso de que la evaluación de la sentencia devuelva resultados negativos.
+       
+        if (expresión) 
+        {
+        //acciones a realizar en caso positivo
+        } else {
+        //acciones a realizar en caso negativo
+        }
+ */
+        
+      //   var edad = parseInt(prompt("Ingrese su Edad"));
+
+      //   document.write("<br>" + edad);
+  var edad ; 
+         if (edad >= 18){
+           //  document.write("es mayor de 18");
+         }else{
+            // document.write("no es mayor de 18");
+         }
+
+    
+
+          
+      //-------- Operador IF
+       //-- Un ejemplo de uso del operador IF se puede ver a continuación.
+       //--var Variable = (condición) ? valor1 : valor2
+
+        //var variable = 7;
+        // var resultado = (variable > 8) ? "si" : "no" ; 
+        // console.log(resultado);
+       /*
+        // switch 
+        var dia_de_la_semana = 3;
+
+        var diaString ="LUNES";
+        switch (diaString) {
+
+          case "Lunes":
+          document.write("Es Lunes")
+          break
+
+          case "Martes":
+          document.write("Es Martes")
+          break
+
+          case "Miercoles":
+          document.write("Es Miércoles")
+          break
+          
+          case "Jueves":
+          document.write("Es Jueves")
+          break
+         
+          case "Viernes":
+          document.write("Es viernes")
+          break
+         
+          case "Sabado":
+          case "Domingo":
+          document.write("Es fin de semana")
+          break
+          
+          default:
+          document.write("Ese día no existe")
+
+        } 
+      */
+
+        //----------BLUCLE FOR-----------------------------------
+        /*El bucle FOR se utiliza para repetir una o más instrucciones un determinado número de veces. De entre todos los bucles, el FOR se suele utilizar cuando sabemos seguro el número de veces que queremos que se ejecute. La sintaxis del bucle for se muestra a continuación.
+
+        for (inicialización; condición; actualización) {
+
+        //sentencias a ejecutar en cada iteración
+
+        }*/
+ 
+
+        /*
+        
+        var i;
+
+        for (i=0;i<=10;i++) {
+
+        document.write(i)
+
+        document.write("<br>")
+
+        } */
+
+        for (let iteracion=0; iteracion<=10; iteracion+=2){
+            // document.write(iteracion);
+
+           //  document.write("<br>");
+        }
+
+   /*
+        //-- Para ir de dos en dos 
+        for (i=1;i<=1000;i+=2)
+            document.write(i)
+
+        //--de forma descendente
+       //-- Si queremos contar descendentemente del 200 al 10 utilizaríamos este bucle.
+            for (i=200;i>=10;i--)
+                document.write(i)
+    
+      
+    */
+        //---------------------- Bucles WHILE y DO WHILE--------------------------------------
+
+        /* while ----Estos bucles se utilizan cuando queremos repetir la ejecución de unas sentencias un número indefinido de veces, siempre que se cumpla una condición.
+        while (condición){
+
+        //sentencias a ejecutar
+
+        }*/
+
+        //--- EJEMPLO
+
+        /*
+        var color = "";
+
+        while (color != "rojo"){
+
+        color = prompt("dame un color (escribe rojo para salir)")
+
+        } 
+        */
+
+
+      
+
+       /* while (contador < 10) {
+           
+           // document.write(contador);  
+          //  document.write("<br>");
+           
+
+          //  contador = contador + 1; 
+            contador++;
+        }*/
+
+      //  document.write("salio del while");
+
+        
+
+        /* 
+        Bucle DO...WHILE
+
+        El bucle do...while es la última de las estructuras para implementar repeticiones de las que dispone en Javascript y es una variación del bucle while visto anteriormente. Se utiliza generalmente cuando no sabemos cuantas veces se habrá de ejecutar el bucle, igual que el bucle WHILE, con la diferencia de que sabemos seguro que el bucle por lo menos se ejecutará una vez.
+
+        do {
+
+        //sentencias del bucle
+
+        } while (condición)
+        
+        // El bucle se ejecuta siempre una vez y al final se evalúa la condición para decir si se ejecuta otra vez el bucle o se termina su ejecución. */
+
+        // ejemplo -- no es necesario inicializar, pide un color primero, y luego lo hace si es diferente de rojo
+
+        /*
+        var color = "rojo"; 
+
+        do{
+
+        color = prompt("dame un color (escribe rojo para salir)");
+
+        } while (color != "rojo");*/
+       
+
+        let contador = 11;
+        do{
+            document.write(contador);
+            document.write("<br>");
+            contador--;
+        }while(contador > 0);
+        
+        // ejemplos
+        /*En este ejemplo vamos a declarar una variable e inicializarla a 0. Luego iremos sumando a esa variable un número aleatorio del 1 al 100 hasta que sumemos 1.000 o más, imprimiendo el valor de la variable suma después de cada operación. Será necesario utilizar el bucle WHILE porque no sabemos exactamente el número de iteraciones que tendremos que realizar (dependerá de los valores aleatorios que se vayan obteniendo).*/
+           
+            /*var suma = 0
+
+            while (suma < 1000){
+
+            suma += parseInt(Math.random() * 100)
+
+            document.write (suma + "<br>")
+
+            }*/
+
+        
+
+
+       //------ CLASE 15 3JS---Callbacks y Closures,Scope,Arrow Function,Funciones----------------------------
+       /*
+        Funciones
+        Arrow Function
+        Scope
+        Objetos en Javascript
+        Callbacks-clousures
+
+       */
+
+       /*
+       
+        Funciones
+        En términos generales, una función es un "subprograma" que puede ser llamado por código externo (o interno en caso de recursión) a la función. Al igual que el programa en sí mismo, una función se compone de una secuencia de declaraciones, que conforman el llamado cuerpo de la función. Se pueden pasar valores a una función, y la función puede devolver un valor.
+        En JavaScript, las funciones son objetos de primera clase, es decir, son objetos y se pueden manipular y transmitir al igual que cualquier otro objeto. Concretamente son objetos Function.
+        General
+        Toda función en JavaScript es un objeto Function.
+
+       
+       
+       
+       
+       */
+
+
+       //--- CLASE 18 6JS-------------------STRING Y SUS METODOS, Y ARRAYS
+       /*
+        Array
+        Metodos String
+        Metodo Math
+        reduce
+        map
+       */
+
+        //---------------------CADENAS DE CARACTERES--------------- (representan texto)
+        //--cualquier caracteres del codigo ascii ocupa un espacio en la cadena
+
+        //var lenguaje = "php aprenderemos";
+        //console.log(lenguaje);
+        
+        // var caracteres;
+
+        //caracteres = 'esto es una cadena con "comillas dobles tambien" ';
+        //console.log(caracteres);
+
+        //-- concatenar cadenas de caracteres 
+        // var miPrimerCadena = "primer cadena";
+        // var union = " - ";
+        // var miSegundaCadena = "mi segunda cadena";
+
+        //var cadenasConcatenadas;
+        //cadenasConcatenadas = miPrimerCadena + union + miSegundaCadena;
+        //console.log(cadenasConcatenadas);
+
+        //-- longitud de una cadena
+        // var miCadena;
+
+       // miCadena = "a";
+        //-- es una propiedad que nos dice cuantos caracteres tiene la cadena
+        //console.log(miCadena.length);
+
+        //-- como acceder a los caracteres de una cadena
+        //var lenguajeProgramacion = "JAVASCRIPT";
+
+        // J A V A S C R I P T -- CADA CARACTER TIENE UN INDICE, EMPIEZA CON 0 
+
+        //console.log(lenguajeProgramacion[0]); // con los corchetes accedemos al primer caracter
+        
+        //-- inmutabilidad de las cadenas de caracteres
+        // var unaCadena = "jola, mundo";
+        // unaCadena[0] = "H";
+        //console.log(unaCadena); // aca podemos notar que no hizo nada, ya que con los corchetes unicamente podemos acceder
+        //unaCadena = "Hola,Mundo";
+        //console.log(unaCadena);
+
+        //-- como acceder a el ultimo caracter de la cadena sin saber cual es 
+        //-- siempre es la longitud menos 1, ya que comenzamos a contar desde 0
+        //console.log(unaCadena[unaCadena.length-1]);
+
+        //--------------------------ARRAYS--------------------------------- 
+        /*Arrays
+         El objeto Array de JavaScript es un objeto global que es usado en la construcción de arrays, que son objetos tipo lista de alto nivel.
+         Los arrays son objetos similares a una lista cuyo prototipo proporciona métodos para efectuar operaciones de recorrido y de mutación. Tanto la longitud como el tipo de los elementos de un array son variables. Dado que la longitud de un array puede cambiar en cualquier momento, y los datos se pueden almacenar en ubicaciones no contiguas, no hay garantía de que los arrays de JavaScript sean correlativos y de extensión fija. Esto depende de cómo el programador elija usarlos. En general estas características son cómodas, aunque si algún caso particular, no resultan deseables, se puede considerar el uso de arrays con tipo.
+
+         */
+        console.log("ARRAYS");
+
+       
+        
+        var datos = ["Juan", 24 ,"Perez" ];
+
+        console.log(datos);
+        console.log(datos[0]);
+        console.log(datos[1]);
+        console.log(datos[2]);
+
+        // arrays anidados
+        var listaDeEstudiantes= [];
+        listaDeEstudiantes = [ ["Gaston",34] , ["Pedro", 25],["Camilia", 30] ];
+        // acceder al segundo elemento del array 
+        console.log(listaDeEstudiantes[0]); 
+        console.log(listaDeEstudiantes[0][1]);
+
+        // actualizar datos de un array que si son mutables 
+
+        var numeros= [10,20,30];
+        console.log(numeros);
+
+        numeros[0] = 40 ;
+        console.log(numeros);
+
+        // acceder a elementos de un arreglo multidimensionales
+        // var arrayAnidados = [ [1,2,3] ,[ 4,5,6] , [ 7,8,9] ];
+        //console.log(arrayAnidados[0][0]);
+        // console.log(arrayAnidados[1][0]);
+        // console.log(arrayAnidados[2][0]);
+
+        // ----------------------METODOS ARRAYS----------------------------
+        //-- .push() -- añade un elemento al final,modifica el array original
+
+        var estaciones = ["invierno", "otoño","Verano"];
+
+        estaciones.push("primavera");
+
+        console.log(estaciones);
+        //--pop() remueve el ultimo elemento del arreglo, modificando el array original
+        estaciones.pop();
+        console.log(estaciones);
+
+        //--shift() elimina el primer elemento del arreglo modifica el original
+        estaciones.shift();
+        console.log(estaciones);
+        //--unshift() como agrego un elemento al principio, modifica el original
+        estaciones.unshift("Verano");
+        console.log(estaciones);
+
+        //--slice devuelve una copia y ya tiene un nuevo espacio en memoria
+         var  miArray = [1,2,3,4];
+         var nuevoArray; 
+         //nuevoArray = miArray.slice();
+        // console.log(nuevoArray);
+
+        //-- tambien se puede cortar el array con slice
+        //-- le indicamos los indices entre 1 y 4 , donde el ultimo indice no lo tiene en cuenta 
+       // nuevoArray = miArray.slice(1,4);
+        //console.log(nuevoArray);
+        //-- podemos poner indices negativos y nos devuelve en este caso los ultimos dos 
+        nuevoArray = miArray.slice(-1);
+        console.log(nuevoArray);
+
+        console.log(miArray.length);
+
+        //--concat  concatenar arrays
+        //const fArray = [10,20,30,40,50];
+        //const sArray= [60,70,80,90];
+        //const tArray = ["nuevo"];
+        //var nuevoArray ;  
+        //nuevoArray = fArray.concat(sArray, tArray);
+        //console.log(nuevoArray); 
+
+        //--mantiene los arrays originales sin modificarlos
+        //console.log(fArray);
+        //console.log(sArray);
+
+        //-- si queremos saber si una variable es un array 
+        //console.log(Array.isArray(3));
+        //var unos = [1,1,1,1];
+        //console.log(Array.isArray(unos));
+
+        //--METODO JOIN , QUE NOS CONVIERTE A UN STRING LOS VALORES DE UN ARRAY
+        //var misDatos = ["Gisele","Gonzalez",33];
+        // dentro de join pongo el separador del string, por defecto es la coma
+        //console.log(misDatos.join(' '));
+
+        //----keys() para obtener los indices de un array 
+        //var numerosVarios=[6,7,8,3,5,2];
+        //console.log(numerosVarios.keys());
+        // console.log(
+        //    [...numerosVarios.keys()] // esto recorre al iterable y lo mete en un array
+        //     );
+
+        //-- REVERSE le da la vuelta al array y modifica el original ojo
+        // var nuevoInfo=[1,2,3,4];
+        //console.log(nuevoInfo.reverse());
+        //console.log(nuevoInfo);
+
+        //-- SPLICE -- A PARTIR DEL INDICE QUE LE INDICAMOS BORRA LOS VALORES Y MODIFICA EL ORIGINAL
+         // var num=[1,2,3,4,5];
+         //-- devuelve los valores eliminados 
+         // console.log(num.splice(2));
+         //-- el original queda solo con los valores del indica 0 y 1
+         // console.log(num);
+
+         //--SORT ordena el array como un string
+         var orden=[8,16,4,2,9,3,1];
+         console.log(orden.sort());
+         //--puedo pasarle una funcion para que ordene con un criterio
+         //-- aca lo ordena como numeros en forma de reversa
+         console.log(orden.sort( (a,b) => b - a ) );
+         // aca lo ordena como numero de forma ascendente
+         console.log( orden.sort( (a,b) => a - b ));
+            
+
+
+        
+        //--------------------metodos de arrays mas COMPLEJOS--------------------
+        //--entries transforma el array en un objeto iterable
+        // me da ventajas de que puedo cortar el for con break
+        // con alguna condicion
+        //console.log(fArray.entries());
+        /*
+        for (let[index,value] of fArray.entries()){
+            console.log(index , value);
+             
+        }*/
+
+        console.log("-------------------------")
+        /*
+        // en este caso no sale del foreach
+        sArray.forEach( (value, index) => {
+            console.log(value,index)
+            if (value ===7){
+                console.log(value)
+            }
+
+        })*/
+
+        //--queremos saber si en nuestro array todos los valores son mayor a 0
+        // miArray = [3,4,5,6];
+        //-- podemos decir que este metodo comprueba que todos los valores cumplan la condicion
+        //miArray.every(value => value =>0);
+        //console.log(miArray.every(value => value =>0)); 
+        // ahora tenemos un metodo que evalua si alguno cumple la condicion 
+        //miArray.some(value => value < 0); 
+        //console.log( miArray.some(value => value < 0));   
+        //miArray =[-5,3,9,19,80,34];    
+        //console.log( miArray.some(value => value < 0));  
+        
+        //-----------metodos de busqueda en un array--------------
+        //-- FILTER encuentra todos los valores que coinciden con el valor que le pasamos
+        //const xArray = [-4,10,20,30,40,50];
+        
+        //--devuelve los valores que cumplen la condicion
+        //console.log(xArray.filter(value => value >= 0))
+
+        //--find, el primer valor que encuentra que cumple con la condicion lo devuelve
+        //console.log(xArray.find(value => value >= 0))
+        //--findindex nos devuelve el valor del indice y no el valor
+        //console.log(xArray.findIndex(value => value >=0));
+
+        // includes-- devuelve true en caso de que el valor buscado este en el array
+        //const yArray= [60,70,80,90];
+        //console.log(yArray.includes(60));
+        //-- indexof(busca de izq a derecha)nos devuelve el indice del valor que coincide con la busqueda
+        //console.log(yArray.indexOf(60));
+        //--lastindexof es igual pero busca de derecha a izquierda
+        //console.log(yArray.lastIndexOf(60));
+
+        //-- metodo MAP genera un nuevo array con las modificaciones que le hacemos ,no modifica el array
+
+        //var original = [10,20,30,40];
+        //var segundo ;
+        //-- aca se pueden hacer cualquier tipo de operaciones
+        //-- en este caso estamos multiplicando el valor 
+        // adentro de map podemos hacer nuestras propias funciones
+        //segundo= original.map(value => value * 2);
+        //console.log(original);
+        //console.log(segundo);
+
+        //-- REDUCE devuelve un acumulativo y el valor en si 
+        //var info = [6,7,8,5];
+       
+        // nos devuelve la suma de todo el array 
+        //  console.log(     info.reduce( ( acc,value) =>  acc + value )  );
+        
+         
+   
+    </script>
+</body>
+</html>

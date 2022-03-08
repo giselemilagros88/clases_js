@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        clase 17 js 
+    </title>
+</head>
+<body>
+    <script>
+
+        // vimos  while do-while for 
+        // vamos a ver funciones, arrays , metodos string y array 
+        // ejercicios-
+        // manejo del dom
+
+        /*
+        Funciones
+        En términos generales, una función es un "subprograma" que puede ser llamado por código externo (o interno en caso de recursión) a la función. Al igual que el programa en sí mismo, una función se compone de una secuencia de declaraciones, que conforman el llamado cuerpo de la función. Se pueden pasar valores a una función, y la función puede devolver un valor.
+        En JavaScript, las funciones son objetos de primera clase, es decir, son objetos y se pueden manipular y transmitir al igual que cualquier otro objeto. Concretamente son objetos Function.
+        General
+        Toda función en JavaScript es un objeto Function. */
+        //parametros y argumentos en JS
+
+        // las variables definidas en la funcion son los parametros
+        // los argumentos son los valores que pasamos en el llamado de la funcion
+        //
+
+        // declaracion de la funcion que muestra un mensaje en el documento 
+         function mostrarMensaje()
+        {
+            document.write("se esta ejecutando la funcion");
+        }
+        //------------------
+          // funciones que retornan un valor 
+
+        function funcionSumaRetornaValor( a , b){
+            let sumaDentroFuncion ;
+            sumaDentroFuncion = a + b ;
+
+            return sumaDentroFuncion;
+        }
+
+
+        // llamada      
+        mostrarMensaje();
+
+        document.write("<br>")
+        document.write("<br>")
+        document.write("--------------------------------------------");
+        document.write("<br>")
+        document.write("<br>")
+        document.write("<br>")
+
+
+        
+        function miFuncion(numero1 , numero2)
+        {
+
+            let miVariable = 2;
+           
+            document.write("Suma de Parametros: " + (numero1 + numero2));
+        }
+      
+        // llamado de la funcion, no es necesario que se defina y luego se la llame, se puede llamar y luego definir
+        miFuncion(2,3);
+        document.write("<br>")
+        
+        document.write("--------------------------------------------");
+
+
+        document.write("<br>")
+        miFuncion("hola "," chau");
+        document.write("<br>")
+        document.write("--------------------------------------------");
+
+
+        document.write("<br>")
+     
+      
+     
+        let suma = funcionSumaRetornaValor( 6 , 4);
+
+        document.write("<br>")
+        document.write(suma);
+        document.write("<br>")
+        document.write("--------------------------------------------");
+
+        // funciones de tipo expresion o anonimas
+
+      
+
+
+        // la declaracion se asigna a la variable 
+        let anonima = function(a,b){ return a + b};
+
+        suma = anonima(1,2);
+        document.write("<br>");
+        document.write(suma);
+        document.write("<br>");
+        document.write("--------------------------------------------");
+        document.write("<br>");
+        // funciones que se llaman a si mismas, pero no es reutilizable
+  
+
+        /*
+        (function ( a , b) {
+            document.write("<br>")
+            document.write("ejecutando la funcion");
+            document.write("<br>")
+            document.write(a+b);
+        } )( 3, 4); */
+        
+
+        // funcion es un tipo de dato
+        document.write("<br>");
+        document.write(typeof(funcionSumaRetornaValor));
+
+        // funciones flechas ,
+        // se parecen a las funciones de expresion o anonimas
+        // usamos una constante porque se le asinga el valor de referencia de la funcion y es recomendable que no cambie
+        // no es necesario usar la palabra reservada , directo los argumentos
+        // tampoco usamos las llaves, va la fecha
+        // no tenemos que usar return directamente el valor que regresa
+        const sumarFuncionTipoFlecha = (a=0,b=1) => a + b ;
+        document.write("<br>")
+            
+        document.write( sumarFuncionTipoFlecha(5,5) );
+
+       // parametros y argumentos 
+
+       //podemos a los parametros pasarles un valor por default
+
+       function parametrosDefault( a = 0, b = 0 , c = 0){
+        // document.write(arguments[2]); // descomento para explicar como acceder a un valor que no tiene parametros
+
+           return a + b ;
+       }
+
+       let numero; //  undefined
+
+      
+        
+       let resultado = parametrosDefault();
+       document.write("<br>")
+       document.write(resultado);
+       document.write("<br>");
+       document.write("--------------------------------------------");
+       document.write("<br>");
+       
+       // se sobrescriben los valores por default
+       resultado = parametrosDefault( 6 , 6);
+       document.write("<br>")
+       document.write(resultado);
+       document.write("<br>")
+
+       // puedo pasar un argumento mas aunque no este definido en la funcion 
+       // de esta forma puedo acceder a un valor arguments[2]
+       resultado = parametrosDefault(3,3,3);
+    
+       //pasar por valor en funciones js , aunque esta funcion se llama cambiavalor, comprobamos que esto no //sucede, al pasar el valor de x a el parametro a , a toma el valor de x y x no sufre modificaciones.
+
+       function cambiarValor(a){
+           a = 20;
+        
+          
+       }
+
+
+       let x = 10 ; // valor primitivo no es un objeto
+
+       // la variable no sufrio ningun cambio, eso es porque la variable x 
+       // le paso su valor a la variable a, pero x no cambia su valor
+       cambiarValor(x);
+       document.write(x);
+       document.write("<br>")
+     
+       
+    </script>
+</body>
+</html>

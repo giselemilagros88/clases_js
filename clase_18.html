@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clase 17</title>
+</head>
+<body>
+    <script>
+
+             // obtiene una referencia de memoria y no el valor de la variable
+       function cambiarValorObjeto(p1){
+           p1.apellido = 'Gonzalez';
+           p1.nombre = 'Carlos';
+           p1.edad = 57;
+           p1.color = 'negro';
+          
+       }
+        // pasar variables por referencia 
+       // vamos a crear un objeto literal
+       // la variable persona tiene una referencia en memoria al espacio que ocupa el tipo persona
+
+       const persona = {
+           // creamos atributos
+           nombre: 'Juan',
+           apellido: 'Perez',
+           edad: 33,
+           color : 'Rojo'
+       }  
+
+       var perro="manchitas";
+      
+     
+       console.log(persona);
+       document.write(persona.nombre);
+       document.write(persona.apellido);
+       document.write(persona.edad);
+       document.write("<br>")
+
+       // llamada a la funcion 
+       cambiarValorObjeto(persona);
+
+
+       console.log(persona);
+       document.write(persona.nombre);
+       document.write("<br>")
+
+       persona.nombre = "Pedro";
+       document.write(persona.nombre);
+        /*
+      
+                // funcion validar 
+        function Validar_Notas(valor){
+
+        while(valor<0 || valor > 10 || isNaN(valor) || valor == null)
+        {
+            valor= parseInt(prompt("Ingrese Nota Nuevamente del 1 al 10"))
+        
+        }
+        return valor
+        }
+        function Validar_Alumno(alumno){
+        while(alumno==null)
+        {
+            alumno=prompt("Ingrese Nombre del Alumno")
+        }
+        return alumno
+        }
+        //**************************************************fin funciones***************************************************** 
+
+        //************************************************declaracion de variables*************** 
+        let nota 
+        let acumulador = 0
+        let vueltas = 0
+
+        //***************************************************programa****************************************************************************************** 
+        var nombre_alumno = prompt("Ingrese Nombre del Alumno");
+        nombre_alumno = Validar_Alumno(nombre_alumno)
+        alert("Este programa calculara el promedio del Alumno:"+ " "+nombre_alumno);
+
+        for (var i= 0; i < 3; i++)
+        {
+        // ingreso de nota 1
+        nota = parseInt(prompt("Ingrese Nota del 1 al 10"));
+        // validacion de nota 1
+        nota = Validar_Notas(nota)
+        acumulador = acumulador + nota
+        // mostrar nota 1
+        alert("La Nota Ingresada fue :"+ String(nota) )
+        //acumulo vueltas
+        vueltas++ 
+        }
+
+        alert("El promedio de las tres Notas del Alumno: "+ nombre_alumno+", es: " + String(parseFloat((acumulador/vueltas).toFixed(2))) )
+        */
+    </script>
+</body>
+</html>

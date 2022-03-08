@@ -1,0 +1,37 @@
+change(input cambiar un dato)
+click
+focus(cuando hace foco en el input)
+blur(salis del form, del input)
+
+removeEventListener("click",saludo)
+
+addEventListener("click",saludo)
+
+e.type obtenes el tipo de evento
+e.target a que objeto se le esta aplicando el evento 
+
+e.preventDefault();(dentro de la funcion para enlaces)
+
+eventos
+
+si le agregamos on los usamos desde el html como atributos
+
+
+onblur un elemento pierde el foco
+onchange un elemento ha sido modificado 
+onclick pulsar y soltar raton
+onfocus elemento obtiene el foco
+keydown pulsar una tecla y no soltar
+keypress pulsar una tecla
+keyup soltar una tecla pulsada
+load pagina cargada completamente
+mousedown pulsar raton y no soltarlo
+mousemove mover el raton
+mouseout el raton sale del elemento 
+mouseover el raton entra al elemento
+mouseup solar el boton de raton
+reset
+resize modificar el tamaño de la pantalla
+select seleccionar un texto
+submit enviar el formulario 
+unload se abandona la pagina al cerrar el navegador

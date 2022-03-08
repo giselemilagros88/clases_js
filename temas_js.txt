@@ -1,0 +1,40 @@
+Introducción a la programación web, ok
+qué es y para qué sirve JavaScript vs ECMAScript  ok
+Uso de consola ok 
+Variables - ok
+Tipos de Datos - ok
+--------------------------------------------------------------
+
+Number, ok
+parseInt ok
+parseFloat. ok 
+
+Operadores ok 
+Relacionales ok
+Comparación ok 
+
+Condicionales (if - else , operador ternario, switch) ok 
+Bucles: 
+While ok 
+For - ok
+Strings y sus métodos ok
+Arrays ok - 
+for Each ok, 
+every ok, 
+filter, ok
+some ok,
+map,ok
+reduce ok
+pop ok
+push ok
+
+Objeto Math - 
+Funciones
+Callbacks y Closures
+Scope
+Arrow Functions
+Manipulación del DOM 
+
+Eventos en JS
+Objetos - Iterar con for in
+Objetos - Iterar con for of

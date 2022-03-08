@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLASE 13 Y 14 JAVASCRIPT</title>
+</head>
+<body>
+    <script>
+
+           //------------ CLASE 13 - 1 JS -----------------------------------------------------------------
+        //console.log("HOLA MUNDO, ESTO ES JS");
+        //console.log("lo que quiera");
+
+        // TIPOS DE DATOS
+        //UNDEFINED CUANDO NO EXISTE UN VALOR ASIGNADO
+        // NULL CUANDO LA VARIABLE NO TIENE CONTENIDO
+        //BOOLEAN VERDADERO Y FALSO 
+        //STRING REPRESENTA CADENA DE CARACTERES
+        //SYMBOL NO LO VAMOS A USAR 
+        //NUMBER NUMEROS
+        //OBJECT OBJETO, UNA ESTRUCTURA QUE NOS PERMITE CREAR NUESTRO PROPIO TIPO DE DATO
+
+        // QUE ES UNA VARIABLE
+        // ES UN ESPACIO EN MEMORIA QUE RESERVA EL COMPUTADOR, 
+        // PODEMOS IMAGINARLO COMO UNA CAJITA 
+        // SE USA LA PALABRA RESERVADA VAR 
+        var miVariable = "CursoPhp";
+
+        var  variable = "";
+        
+
+        //-- palabra reservada + nombre de variable + asignador de contenido + contenido + ; opcional
+        console.log(miVariable);
+       
+
+        //-- puedo asignar otro tipo de dato o valor a mi variable 
+
+        miVariable = 16;
+        console.log(miVariable);
+
+        miVariable= true;
+        console.log(miVariable);
+        miVariable= false;
+
+        
+
+        // --dependiendo el contenido de la variable su nombre deberia identificar ese contenido ej:
+         var miNombre = "Gisele";
+         console.log(miNombre);
+
+        //-- esta manera de darle nombre a las variables se denomina camelCase
+        //  var camelCase = "unaVariable";
+        //--esta linea es valida 
+        // var variable;
+        // var variable2 = 2;
+        // --vamos a ver que al crearla y mostrarla sin darle un valor dice undefined
+        //  console.log(variable);
+        // console.log(variable2);
+
+        // --para darle un valor a la variable que creamos arriba es asi 
+        //  variable = "unValor"; // ya tiene un valor 
+        //  console.log(variable);
+
+        //-- asignar un valor de una variable a otra variable 
+
+         var a = 5; 
+         var b= "hola";
+         var b = a;
+
+         console.log(a);
+        console.log(b);
+
+        //-- otra forma de asignar es la siguiente 
+
+         var c = 10;
+         var d;
+         d = c; 
+        // console.log(c);
+        // console.log(d);
+
+        //--tambien podemos declarar las variables con la palabra reservada let 
+        //--Esta nueva manera de declarar las variables afecta a su ámbito, ya que son locales al bloque donde se están declarando.
+         let unaVariable = 3; 
+         let otraVariable = 4;
+         console.log(unaVariable);
+
+        // la diferencia entre una variable declarada y una inicializada  
+        // var x;
+        // var x = 1; // aca la creamos y la inicializamos (le damos un valor)
+        // declaracion de una constante , es decir no cambia su valor 
+          
+        const soyConstante = 3;
+        // aca llegamos ------miercoles
+
+
+
+        // -- en js las variables con mayusculas y minisculas no son iguales 
+        // --case sensitive
+        //  var miApellido ="gonzalez";
+        //  console.log(miapellido); // index.html:77 Uncaught ReferenceError: miapellido is not defined
+        //  console.log(miApellido);
+
+        //----------------------------VAR VS LET------------------------
+        //-- UNA DE LAS DIFERENCIAS PRINCIPALES ES QUE CUANDO DECLARAMOS UNA
+        //--VARIABLE CON VAR PODEMOS DECLARAR LA MISMA VARIABLE MAS DE UNA VEZ
+        // var variable ="pedro";
+        // var variable ="Jose" ;
+        // con LET no podemos declarar la variable dos veces
+        // let sumatoria= 2 + 3 ;
+        //sumatoria = 8 ;
+        //--------------------------AMIBITO DE VAR Y LET-------------------- 
+        //--CUANDO USAMOS VAR ESTAMOS CREANDO UNA VARIABLE GLOBAL que se podra acceder por todos lados
+        //-- O UNA VARIABLE LOCAL SI ESTA UNA FUNCION Y LA MISMA NO SE VA A PODER USAR FUERA DE LA FUNCION
+        //-- cuando usamos let estamos limitando su uso al bloque donde se define
+        // ejemplo en un ciclo o en un condicional si usamos una variable y la declaramos let, no podremos acceder fuera del mismo
+
+
+        // 
+        
+
+        //--------------------CONVERSIONES DE TIPO DE DATOS
+        //-- SI TENGO UNA VARIABLE QUE TIENE EL SIGUIENTE DATO
+         var numeroString= "5";
+         var numeroString2 = "10";
+
+
+
+         //numeroString = parseInt(numeroString);
+
+         //var numeroInt = parseInt(numeroString);
+
+         var suma = parseInt(numeroString) + parseInt(numeroString2);
+         console.log(suma);
+
+         numeroString = parseInt(numeroString);
+
+         
+         numeroString2  = parseInt(numeroString2);
+
+         console.log(numeroString + numeroString2);
+
+         var miLetra = "5.66b7";
+         var numero = 2;
+
+         console.log(parseInt(miLetra));
+
+         //var suma = numeroString + numeroString2 ;
+
+        // console.log(suma);
+
+         // esto no es un numero, sino una cadena que tiene un 5
+        //console.log( parseInt(numeroString));
+        var miFloat = 2.6;
+        console.log(parseInt(miFloat)); // me trunca el float a entero
+        //-- ahora si quiero convertir una cadena que no tiene caracteres que representen numeros
+        //--al intentar convertir me devolvera NaN , NOT A NUMBER 
+        //var miString = "Hola";
+        //console.log(parseInt(miString));
+        //-- tambien va a tratar de un string sacar la parte que es numerica
+        //--parseInt("44aa33bb"); // 44
+        //-- parseFloat() convierte una cadena de caracteres a un float si es que tiene caracteres que representar numeros
+        var numeroFloat= "3.56";
+        console.log( parseFloat(numeroFloat) ); // ahora que es un numero puedo hacer operaciones matematicas con el
+
+        //-- Number() A diferencia de los dos métodos anteriores, éste y el siguiente (conversión implícita) son  //específicamente para //conversión de tipos. En cambio, parseInt() y parseFloat() son para extraer un número de un string.
+        //--Number() es un constructor para crear objetos de tipo Number, pero cuando se utiliza sin el new funciona como //--un conversor a tipo númerico.
+
+        //--como constructor: 
+        // var myNumber = new Number(14);
+        // console.log(myNumber);
+
+        //--como método: 
+        var myNumber =  Number(true);
+         
+        console.log(myNumber);
+
+        /*Puede utilizarse para números enteros o decimales y acepta también la notación exponencial.
+
+            Number("12"); // 12
+            Number("3.14"); // 3.14
+            Number("314e-2"); // 3.14
+            Number("0.0314E+2"); // 3.14
+            Number("e-2"); // NaN
+            Number('0x10'); // 16 admite el prefijo 0x para indicar 'hexadecimal'
+            Number(" 12 "); // 12
+            Number("20 dias"); // NaN
+            Number("Hace 20 dias"); // NaN
+            Number("44aa33bb"); // NaN
+            Number(""); // 0 -> ¡¡el string vacio se convierte a 0!!
+            Number(" "); // 0
+            Number(null); // 0
+            Con Number() podemos convertir booleans en números, false siempre se convierte en 0 y true en 1.
+            Number(true); // 1
+            Number(false); // 0
+            //--también podemos incluir una expresión con resultado boolean
+            Number( (1<2) ); // 1
+            Number( (1===2) ); // 0 */
+
+            var myNumberValue = +"8"; // number 8
+            console.log(myNumberValue); 
+
+            
+            // CONVERSION IMPLICITA 
+            /* Conversión implicita '+'
+
+             
+
+            La conversión implícita es una forma de conversión rápida a número. Podemos utilizar cualquier operación que fuerce al intérprete a realizar una conversión implícita de tipos pero que no varíe el operando:
+
+            var myNumberValue = "8" - 0; // number 8
+            var myNumberValue = "8" * 1; // number 8
+            var myNumberValue = "8" / 1; // number 8
+            var myNumberValue = +"8"; // number 8
+            La forma más utilizada por su simplicidad es +var. El operador unitario + no cambia el valor de var pero lo convierte a número. No confundir con ++var que sí cambia el valor, sumándole uno.   */
+            
+            /* Como veremos en los siguientes ejemplos, esta forma de conversión es equivalente a Number() y devuelve los mismos resultados:
+            +"12"; // 12
+            +"3.14"; // 3.14
+            +"314e-2"; // 3.14
+            +"0.0314E+2"; // 3.14
+            +"e-2"; // NaN
+            +"0x10"; // 16 admite el prefijo 0x para indicar 'hexadecimal'
+            +" 12 "; // 12
+            +"20 dias"; // NaN
+            +"Hace 20 dias"; // NaN
+            +"44aa33bb"; // NaN
+            +""; // 0 -> ¡¡el string vacio se convierte a 0!!
+            +" "; // 0
+            +null; // 0
+
+            //boolean
+            +true; // 1
+            +false; // 0
+            //también podemos incluir una expresión con resultado boolean
+            +(1<2); // 1
+            +(1===2); // 0*/
+
+            
+
+            //--------------------RESUMEN DE CONVERSIONES----------------------------------
+            /*
+            parseInt() tiene un parámetro extra para indicar la base del número (radix).
+            parseFloat() no admite radix. Todos los números se consideran en base decimal.
+            parseInt(), Number() y '+' interpretan el prefijo '0x' como número hexadecimal, parseFloat() no.
+            parseInt() y parseFloat() pueden extraer un número al principio de un string.
+            Si el string contiene caracteres no numéricos, Number() y '+' no lo convierten, devuelven NaN.
+            Cuando el argumento es un objeto, parseInt() y parseFloat() llamarán al método .toString() antes de analizar la cadena. Number() y +var llamarán primero a .valueOf() y despues a .toString() si es necesario.
+
+            parseInt() no entiende la notación exponencial, todos los demás si.
+            parseInt() y parseFloat() convierten el string vacio en NaN.
+            Number() y '+' convierten el string vacio en 0.
+            parseInt() y parseFloat() de un boolean es NaN.
+            Number() y '+' de un boolean devuelven 0 para false y 1 para true.*/
+
+
+        //-----------------CLASE 14 OPERADORES-BUCLES-CONDICIONALES- ------------ 2 JS--------------------------
+        // --------------------------OPERACIONES-----------------
+
+        // --suma y resta de dos numeros 
+        // var suma = 7 + 12 ;
+        // console.log(suma);
+        // var resta = 15 - 5 ; 
+        // console.log(resta);
+        // resta = 5 - 15 ; // puedo actualizar el valor de una variable 
+        // console.log(resta);
+
+        //--multiplicacion de dos numeros
+        // var producto = 5 * 3 ; 
+        // console.log(producto);
+        // producto = 9 * 0 ;
+        // console.log(producto);
+
+        //--division de dos numeros 
+        // var cociente = 10 / 5 ;
+        // console.log(cociente);
+        // cociente = 17 / 31 ;
+
+        //--la computadora puede guardar un numero finito de resultados, 
+        // --el resultado sera una aproximacion 
+        // console.log(cociente); 
+
+        //-- vamos a dividir por 0 
+         cociente = 10 / 0 ;
+        console.log(cociente); // devolvera infinity 
+
+        //-- tambien podemos crear numeros decimales(float)
+        // var miNumeroDecimal = 23.4 ; 
+        // console.log(miNumeroDecimal);
+        //-- las operaciones con los numeros decimales son iguales que con los numeros enteros
+
+        //-- como saber si un numero es par o inpar
+        //-- nos da el resto entre 10/2, donde el cociente es 5, pero el resto sera 0
+        //-- de esta forma si dividimos los numeros por dos y el resto es 0 sabemos que el numero es par 
+         var resto = 5 % 2 ;
+         console.log(resto);
+    </script>
+</body>
+</html>

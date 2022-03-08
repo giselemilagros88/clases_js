@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>strings-arrays</title>
+
+</head>
+<body>
+    <script>
+                //---------------------CADENAS DE CARACTERES--------------- (representan texto)
+                //--cualquier caracteres del codigo ascii ocupa un espacio en la cadena
+
+                //var lenguaje = "php aprenderemos";
+                //console.log(lenguaje);
+                
+                // var caracteres;
+
+                //caracteres = 'esto es una cadena con "comillas dobles tambien" ';
+                //console.log(caracteres);
+
+                //-- concatenar cadenas de caracteres 
+                // var miPrimerCadena = "primer cadena";
+                // var union = " - ";
+                // var miSegundaCadena = "mi segunda cadena";
+
+                //var cadenasConcatenadas;
+                //cadenasConcatenadas = miPrimerCadena + union + miSegundaCadena;
+                //console.log(cadenasConcatenadas);
+
+                //-- longitud de una cadena
+                // var miCadena;
+
+            // miCadena = "a";
+                //-- es una propiedad que nos dice cuantos caracteres tiene la cadena
+                //console.log(miCadena.length);
+
+                //-- como acceder a los caracteres de una cadena
+                //var lenguajeProgramacion = "JAVASCRIPT";
+
+                // J A V A S C R I P T -- CADA CARACTER TIENE UN INDICE, EMPIEZA CON 0 
+
+                //console.log(lenguajeProgramacion[0]); // con los corchetes accedemos al primer caracter
+                
+                //-- inmutabilidad de las cadenas de caracteres
+                // var unaCadena = "jola, mundo";
+                // unaCadena[0] = "H";
+                //console.log(unaCadena); // aca podemos notar que no hizo nada, ya que con los corchetes unicamente podemos acceder
+                //unaCadena = "Hola,Mundo";
+                //console.log(unaCadena);
+
+                //-- como acceder a el ultimo caracter de la cadena sin saber cual es 
+                //-- siempre es la longitud menos 1, ya que comenzamos a contar desde 0
+                //console.log(unaCadena[unaCadena.length-1]);
+
+                //--------------------------ARRAYS--------------------------------- 
+                /*Arrays
+                El objeto Array de JavaScript es un objeto global que es usado en la construcción de arrays, que son objetos tipo lista de alto nivel.
+                Los arrays son objetos similares a una lista cuyo prototipo proporciona métodos para efectuar operaciones de recorrido y de mutación. Tanto la longitud como el tipo de los elementos de un array son variables. Dado que la longitud de un array puede cambiar en cualquier momento, y los datos se pueden almacenar en ubicaciones no contiguas, no hay garantía de que los arrays de JavaScript sean correlativos y de extensión fija. Esto depende de cómo el programador elija usarlos. En general estas características son cómodas, aunque si algún caso particular, no resultan deseables, se puede considerar el uso de arrays con tipo.
+
+                */
+                console.log("ARRAYS");
+
+            
+                
+        var datos = ["Juan", 24 ,"Perez" ];
+
+        console.log(datos);
+        console.log(datos[0]);
+        console.log(datos[1]);
+        console.log(datos[2]);
+
+        // arrays anidados
+        var listaDeEstudiantes= [];
+        listaDeEstudiantes = [ ["Gaston",34] , ["Pedro", 25],["Camilia", 30] ];
+        // acceder al segundo elemento del array 
+        console.log(listaDeEstudiantes[0]); 
+        console.log(listaDeEstudiantes[0][1]);
+
+        // actualizar datos de un array que si son mutables 
+
+        var numeros= [10,20,30];
+        console.log(numeros);
+
+        numeros[0] = 40 ;
+        console.log(numeros);
+
+        // acceder a elementos de un arreglo multidimensionales
+        // var arrayAnidados = [ [1,2,3] ,[ 4,5,6] , [ 7,8,9] ];
+        //console.log(arrayAnidados[0][0]);
+        // console.log(arrayAnidados[1][0]);
+        // console.log(arrayAnidados[2][0]);
+
+        // ----------------------METODOS ARRAYS----------------------------
+        //-- .push() -- añade un elemento al final,modifica el array original
+
+        var estaciones = ["invierno", "otoño","Verano"];
+
+        estaciones.push("primavera");
+
+        console.log(estaciones);
+        //--pop() remueve el ultimo elemento del arreglo, modificando el array original
+        estaciones.pop();
+        console.log(estaciones);
+
+        //--shift() elimina el primer elemento del arreglo modifica el original
+        estaciones.shift();
+        console.log(estaciones);
+        //--unshift() como agrego un elemento al principio, modifica el original
+        estaciones.unshift("Verano");
+        console.log(estaciones);
+
+        //--slice devuelve una copia y ya tiene un nuevo espacio en memoria
+        var  miArray = [1,2,3,4];
+        var nuevoArray; 
+        //nuevoArray = miArray.slice();
+        // console.log(nuevoArray);
+
+        //-- tambien se puede cortar el array con slice
+        //-- le indicamos los indices entre 1 y 4 , donde el ultimo indice no lo tiene en cuenta 
+        // nuevoArray = miArray.slice(1,4);
+        //console.log(nuevoArray);
+        //-- podemos poner indices negativos y nos devuelve en este caso los ultimos dos 
+        nuevoArray = miArray.slice(-1);
+        console.log(nuevoArray);
+
+        console.log(miArray.length);
+
+        //--concat  concatenar arrays
+        //const fArray = [10,20,30,40,50];
+        //const sArray= [60,70,80,90];
+        //const tArray = ["nuevo"];
+        //var nuevoArray ;  
+        //nuevoArray = fArray.concat(sArray, tArray);
+        //console.log(nuevoArray); 
+
+        //--mantiene los arrays originales sin modificarlos
+        //console.log(fArray);
+        //console.log(sArray);
+
+        //-- si queremos saber si una variable es un array 
+        //console.log(Array.isArray(3));
+        //var unos = [1,1,1,1];
+        //console.log(Array.isArray(unos));
+
+        //--METODO JOIN , QUE NOS CONVIERTE A UN STRING LOS VALORES DE UN ARRAY
+        //var misDatos = ["Gisele","Gonzalez",33];
+        // dentro de join pongo el separador del string, por defecto es la coma
+        //console.log(misDatos.join(' '));
+
+        //----keys() para obtener los indices de un array 
+        //var numerosVarios=[6,7,8,3,5,2];
+        //console.log(numerosVarios.keys());
+        // console.log(
+        //    [...numerosVarios.keys()] // esto recorre al iterable y lo mete en un array
+        //     );
+
+        //-- REVERSE le da la vuelta al array y modifica el original ojo
+        // var nuevoInfo=[1,2,3,4];
+        //console.log(nuevoInfo.reverse());
+        //console.log(nuevoInfo);
+
+        //-- SPLICE -- A PARTIR DEL INDICE QUE LE INDICAMOS BORRA LOS VALORES Y MODIFICA EL ORIGINAL
+        // var num=[1,2,3,4,5];
+        //-- devuelve los valores eliminados 
+        // console.log(num.splice(2));
+        //-- el original queda solo con los valores del indica 0 y 1
+        // console.log(num);
+
+        //--SORT ordena el array como un string
+        var orden=[8,16,4,2,9,3,1];
+        console.log(orden.sort());
+        //--puedo pasarle una funcion para que ordene con un criterio
+        //-- aca lo ordena como numeros en forma de reversa
+        console.log(orden.sort( (a,b) => b - a ) );
+        // aca lo ordena como numero de forma ascendente
+        console.log( orden.sort( (a,b) => a - b ));
+            
+
+
+
+        //--------------------metodos de arrays mas COMPLEJOS--------------------
+        //--entries transforma el array en un objeto iterable
+        // me da ventajas de que puedo cortar el for con break
+        // con alguna condicion
+        //console.log(fArray.entries());
+        /*
+        for (let[index,value] of fArray.entries()){
+            console.log(index , value);
+            
+        }*/
+
+        console.log("-------------------------")
+        /*
+        // en este caso no sale del foreach
+        sArray.forEach( (value, index) => {
+            console.log(value,index)
+            if (value ===7){
+                console.log(value)
+            }
+
+        })*/
+
+        //--queremos saber si en nuestro array todos los valores son mayor a 0
+        // miArray = [3,4,5,6];
+        //-- podemos decir que este metodo comprueba que todos los valores cumplan la condicion
+        //miArray.every(value => value =>0);
+        //console.log(miArray.every(value => value =>0)); 
+        // ahora tenemos un metodo que evalua si alguno cumple la condicion 
+        //miArray.some(value => value < 0); 
+        //console.log( miArray.some(value => value < 0));   
+        //miArray =[-5,3,9,19,80,34];    
+        //console.log( miArray.some(value => value < 0));  
+
+        //-----------metodos de busqueda en un array--------------
+        //-- FILTER encuentra todos los valores que coinciden con el valor que le pasamos
+        //const xArray = [-4,10,20,30,40,50];
+
+        //--devuelve los valores que cumplen la condicion
+        //console.log(xArray.filter(value => value >= 0))
+
+        //--find, el primer valor que encuentra que cumple con la condicion lo devuelve
+        //console.log(xArray.find(value => value >= 0))
+        //--findindex nos devuelve el valor del indice y no el valor
+        //console.log(xArray.findIndex(value => value >=0));
+
+        // includes-- devuelve true en caso de que el valor buscado este en el array
+        //const yArray= [60,70,80,90];
+        //console.log(yArray.includes(60));
+        //-- indexof(busca de izq a derecha)nos devuelve el indice del valor que coincide con la busqueda
+        //console.log(yArray.indexOf(60));
+        //--lastindexof es igual pero busca de derecha a izquierda
+        //console.log(yArray.lastIndexOf(60));
+
+        //-- metodo MAP genera un nuevo array con las modificaciones que le hacemos ,no modifica el array
+
+        //var original = [10,20,30,40];
+        //var segundo ;
+        //-- aca se pueden hacer cualquier tipo de operaciones
+        //-- en este caso estamos multiplicando el valor 
+        // adentro de map podemos hacer nuestras propias funciones
+        //segundo= original.map(value => value * 2);
+        //console.log(original);
+        //console.log(segundo);
+
+        //-- REDUCE devuelve un acumulativo y el valor en si 
+        //var info = [6,7,8,5];
+
+        // nos devuelve la suma de todo el array 
+        //  console.log(     info.reduce( ( acc,value) =>  acc + value )  );
+
+ 
+    </script>
+</body>
+</html>
